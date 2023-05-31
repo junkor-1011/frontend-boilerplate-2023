@@ -1,0 +1,4 @@
+**/node_modules
+**/.git
+**/pnpm-lock.yaml
+**/public/mockServiceWorker.js

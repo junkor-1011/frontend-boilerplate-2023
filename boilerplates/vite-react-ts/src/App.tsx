@@ -1,24 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { css } from '@linaria/core';
+import reactLogo from './assets/react.svg';
+// eslint-disable-next-line import/no-absolute-path
+import viteLogo from '/vite.svg';
+import './App.scss';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="grid grid-cols-2 gap-2">
+        <div>
+          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+        </div>
+        <div>
+          <a href="https://react.dev" target="_blank" rel="noreferrer">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
       </div>
-      <h1>Vite + React</h1>
+      <h1>
+        <span
+          className={css`
+            color: blue;
+            font-weight: bold;
+          `}
+        >
+          Vite + React
+        </span>
+      </h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button
+          onClick={() => {
+            setCount((count) => count + 1);
+          }}
+          className="btn btn-accent"
+        >
           count is {count}
         </button>
         <p>
@@ -29,7 +49,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
