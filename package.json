@@ -1,4 +1,6 @@
 {
+  "private": true,
+  "packageManager": "pnpm@8.6.0",
   "name": "frontend-boilerplate-2023",
   "version": "1.0.0",
   "description": "",
