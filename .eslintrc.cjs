@@ -1,5 +1,6 @@
 // @ts-check
 // const { builtinModules } = require('node:module');
+const path = require('node:path');
 const { defineConfig } = require('eslint-define-config');
 
 module.exports = defineConfig({
@@ -22,8 +23,9 @@ module.exports = defineConfig({
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: [
-      'boilerplates/vite-react-ts/tsconfig.json',
-      'boilerplates/vite-react-ts/tsconfig.node.json',
+      path.join(__dirname, 'boilerplates/vite-react-ts/tsconfig.json'),
+      path.join(__dirname, 'boilerplates/vite-react-ts/tsconfig.node.json'),
+      path.join(__dirname, 'boilerplates/nextjs-ssr/tsconfig.json'),
     ],
   },
   plugins: ['react', 'react-refresh', '@typescript-eslint', 'testing-library'],
